@@ -79,6 +79,29 @@ class ATM: public People, public Acleda{
             Acleda::setData(accid, balance);
             this->password = password;
         }
+        void setPassword(string password){
+            this->password = password;
+        }
+        void displayData(){
+            cout << "ID: " << People::getId() << endl;
+            cout << "Name: " << People::getName() << endl;
+            cout << "Gender: " << People::getGender() << endl;
+            cout << "Address: " << People::getAddress() << endl;
+            cout << "Account ID: " << Acleda::getAccId() << endl;
+            cout << "Balance: " << Acleda::getBalance() << endl;
+        }
+        void withdraw(float amount){
+            if(amount > Acleda::getBalance()){
+                cout << "Insufficient balance!" << endl;
+            } else {
+                Acleda::setBalance(Acleda::getBalance() - amount);
+                cout << "Withdrawal successful! New balance: " << Acleda::getBalance() << endl;
+            }
+        }
+        void deposit(float amount){
+            Acleda::setBalance(Acleda::getBalance() + amount);
+            cout << "Deposit successful! New balance: " << Acleda::getBalance() << endl;
+        }
 };
 
 int main() {
