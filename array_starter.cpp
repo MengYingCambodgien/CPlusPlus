@@ -19,7 +19,7 @@ int main(){
         goto Back;
     }
     
-    cout << "YOur name"
+    cout << "YOur name";
 
     return 0;
 }
